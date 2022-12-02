@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Bean;
 import com.etteplan.servicemanual.factorydevice.FactoryDevice;
 import com.etteplan.servicemanual.factorydevice.FactoryDeviceRepository;
 
+import com.etteplan.servicemanual.maintenancetask.MaintenanceTask;
+import com.etteplan.servicemanual.maintenancetask.MaintenanceTaskRepository;
+
 @SpringBootApplication
 public class ServiceManualApplication {
 
@@ -19,7 +22,7 @@ public class ServiceManualApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(final FactoryDeviceRepository repository) {
+    public CommandLineRunner commandLineRunner(final FactoryDeviceRepository factoryDeviceRepository, final MaintenanceTaskRepository maintenanceTaskRepository) {
         return (args) -> {
             final List<FactoryDevice> devices = new ArrayList<FactoryDevice>();
 
@@ -44,7 +47,24 @@ public class ServiceManualApplication {
             }
             scanner.close();
 
-            repository.saveAll(devices);
+            factoryDeviceRepository.saveAll(devices);            
+
+            //MaintenanceTask task = new MaintenanceTask(2, "Testing", 0);
+
+            final List<MaintenanceTask> tasks = Arrays.asList(                
+                new MaintenanceTask(Long.valueOf(1),2, "Testing 1", 0),
+                new MaintenanceTask(Long.valueOf(2),1, "Testing 2", 1),
+                new MaintenanceTask(Long.valueOf(3),3, "Testing 3", 0)
+            );
+
+            
+            maintenanceTaskRepository.saveAll(tasks);
+
+            /*tasks.forEach(task -> {
+                System.out.println(task.getDescription());
+            });   */        
+
+
 
             /**
              * Remove this. Temporary device storage before proper data storage is implemented.
