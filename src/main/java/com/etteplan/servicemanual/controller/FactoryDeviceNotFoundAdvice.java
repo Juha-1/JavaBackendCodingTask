@@ -1,4 +1,4 @@
-package com.etteplan.servicemanual.factorydevice;
+package com.etteplan.servicemanual.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

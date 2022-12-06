@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceManualApplication<service-manual>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.etteplan.servicemanual.ServiceManualApplication",
+            "projectName": "service-manual",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
