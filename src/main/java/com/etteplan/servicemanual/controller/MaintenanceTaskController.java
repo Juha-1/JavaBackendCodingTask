@@ -66,6 +66,8 @@ public class MaintenanceTaskController {
                 .map(maintenanceTask -> {
                     maintenanceTask.setFactoryDeviceId(newMaintenanceTask.getFactoryDeviceId());
                     maintenanceTask.setSeverity(newMaintenanceTask.getSeverity());
+                    maintenanceTask.setStatus(newMaintenanceTask.getStatus());
+                    maintenanceTask.setDescription(newMaintenanceTask.getDescription());
                     return maintenanceTaskRepository.save(maintenanceTask);
                 })
                 .orElseThrow(() -> new MaintenanceTaskNotFoundException(id));

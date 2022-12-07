@@ -23,7 +23,7 @@ public class MongoSearchMaintenanceTaskRepositoryImpl implements MongoSearchMain
     @Autowired
     MongoConverter mongoConverter;
 
-    // Testing Mongodb Atlas cloud aggregations
+    // Testing Mongodb Atlas cloud aggregations. Not in use at the moment.
     public List<MaintenanceTask> findByDescriptionText(String text) {
 
         final List<MaintenanceTask> mlist = new ArrayList<>();

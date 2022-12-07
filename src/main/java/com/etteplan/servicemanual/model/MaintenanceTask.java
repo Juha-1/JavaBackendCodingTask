@@ -19,12 +19,12 @@ public class MaintenanceTask {
     private String description;
     @Enumerated(EnumType.ORDINAL)
     private StatusLevels status;
-    private Long timestamp;
+    private Long timestamp; //Date and time of the registration is in timestamp format. This way frontend can freely choose how it wants to process and show registration time.
 
     public enum SeverityLevels {
         CRITICAL,
         IMPORTANT,
-        UNINPORTANT
+        UNIMPORTANT
     }
 
     public enum StatusLevels {
