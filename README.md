@@ -24,7 +24,7 @@ repository\
 
 util\
     CSVReader is helping class to read CSV file.\
-    MaintenanceTaskGenerator is helping class to fill MaintenanceTask repository with some random data.\
+    MaintenanceTaskGenerator is helping class to fill MaintenanceTask repository with some random data.
 
 
 Application starting point is in ServiceManualApplication class.
@@ -67,14 +67,14 @@ example:
         "name": "Device 2",\
         "year": 1982,\
         "type": "Type 11"\
-}]\
+}]
 
 GET\
 /factorydevices/{id}\
 Get one factory device by id\
 Example\
 request:\
-/factorydevices/6390072123cd3a655eb06839\
+/factorydevices/6390072123cd3a655eb06839
 
 response:\
 {\
@@ -82,7 +82,7 @@ response:\
     "name": "Device 0",\
     "year": 2004,\
     "type": "Type 19"\
-}\
+}
 
 POST\
 /factorydevices\
@@ -93,7 +93,7 @@ request:\
     "name": "Test device",\
     "year": 1982,\
     "type": "Test type"\
-}\
+}
 
 response\
 {\
@@ -101,7 +101,7 @@ response\
     "name": "Test device",\
     "year": 1982,\
     "type": "Test type"\
-}\
+}
 
 
 PUT\
@@ -112,15 +112,15 @@ Example:\
     "name": "Test device modified",\
     "year": 1983, \
     "type": "Type 2"\
-}\
+}
 
 DELETE\
 /factorydevices/6390072123cd3a655eb06839\
-Removes factorydevice with id\
+Removes factorydevice with id
 
 
 Maintenancetasks\
-Maintenance tasks are used to store all mainenance tasks of the factory devices.\
+Maintenance tasks are used to store all mainenance tasks of the factory devices.
 
 Data with datatypes:\
 factoryDeviceId: String -id of the factory device which this maintenance task concerns.\
@@ -128,11 +128,11 @@ severity: Enum { CRITICAL, IMPORTANT, UNIMPORTANT } -Severity of the task.\
 status: Enum { OPEN, CLOSED } -Is the task open or closed.\
 description: String -Description about the maintenance task.\
 timestamp: Long -Timestamp when this maintenance task was registered. This is automatically generated when new tasks are posted.\
-id: String -Mongo db generated id of the maintenance task.\
+id: String -Mongo db generated id of the maintenance task.
 
 /maintenancetasks\
 Get all maintenance tasks as JSON.\
-Tasks are sorted first with severity and secondly with registration time.\
+Tasks are sorted first with severity and secondly with registration time.
 
 Example\
 Response when three maintenance tasks are registered.\
@@ -140,14 +140,14 @@ Response when three maintenance tasks are registered.\
     {"factoryDeviceId":"638f028a35c5ce5d76cdc310","severity":"CRITICAL","description":"Maintenance task 3","status":"CLOSED","timestamp":1670316682770,"id":"638f028b35c5ce5d76cdc40c"},\
     {"factoryDeviceId":"638f028a35c5ce5d76cdc16c","severity":"CRITICAL","description":"Maintenance task 5","status":"OPEN","timestamp":1670316682777,"id":"638f028b35c5ce5d76cdc40e"},\
     {"factoryDeviceId":"638f028a35c5ce5d76cdc121","severity":"CRITICAL","description":"Maintenance task 6","status":"CLOSED","timestamp":1670316682781,"id":"638f028b35c5ce5d76cdc40f"}\
-]\
+]
 
 GET\
 /maintenancetasks/{id}\
 Get maintenance task with id\
 Example\
 request:\
-get: /maintenancetasks/638f028b35c5ce5d76cdc42e\
+get: /maintenancetasks/638f028b35c5ce5d76cdc42e
 
 response:\
 {\
@@ -157,7 +157,7 @@ response:\
     "status":"CLOSED",\
     "timestamp":1670316682887,\
     "id":"638f028b35c5ce5d76cdc42e"\
-}\
+}
 
 POST\
 /maintenancetasks\
@@ -173,7 +173,7 @@ request\
     "severity": "UNIMPORTANT",\
     "description": "Testing",\
     "status": "OPEN"\
-}\
+}
 
 response\
 {\
@@ -183,7 +183,7 @@ response\
     "status": "OPEN",\
     "timestamp": 1670386239530,\
     "id": "6390123ffff5e54e9dcf1ef5"\
-}\
+}
 
 PUT\
 /maintenancetasks/6390123ffff5e54e9dcf1ef5\
@@ -195,7 +195,7 @@ request\
     "severity": "CRITICAL",\
     "description": "Testing again",\
     "status": "CLOSED"\
-}\
+}
 
 response\
 {\
@@ -205,7 +205,7 @@ response\
     "status": "CLOSED",\
     "timestamp": 1670386239530,\
     "id": "6390123ffff5e54e9dcf1ef5"\
-}\
+}
 
 DELETE\
 Remove maintenance task with id\
